@@ -7,7 +7,7 @@ struct LinkedListNode {
 
 bool find(LinkedListNode* head, int value) {
 	bool b = false;
-	while (head != NULL) {
+	while (head != nullptr) {
 		if (head->data == value) {
 			b = true;
 		}
@@ -29,12 +29,12 @@ int main()
 	second.next = &third;
 
 	third.data = 10;
-	third.next = NULL;*/
+	third.next = nullptr;*/
 
-	LinkedListNode arr[50];
 	int array_size;
 	std::cout << "array_size: ";
 	std::cin >> array_size;
+	LinkedListNode* arr = new LinkedListNode[array_size];
 	for (int i = 0; i < array_size; ++i) {
 		if (i < array_size - 1) {
 			std::cin >> arr[i].data;
@@ -43,7 +43,7 @@ int main()
 		else
 		{
 			std::cin >> arr[i].data;
-			arr[i].next = NULL;
+			arr[i].next = nullptr;
 		}
 	}
 	//arr[array_size-1].next = NULL;
@@ -55,4 +55,7 @@ int main()
 		std::cout << "yes" << "\n";
 	else
 		std::cout << "no" << "\n";
+
+	delete[]arr;
+	arr = nullptr;
 }
